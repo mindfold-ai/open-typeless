@@ -14,7 +14,7 @@
   "branch": "feature/push-to-talk",
   "base_branch": null,
   "worktree_path": null,
-  "current_phase": 1,
+  "current_phase": 2,
   "next_action": [
     {
       "phase": 1,
