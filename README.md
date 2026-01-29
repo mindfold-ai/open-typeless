@@ -1,8 +1,8 @@
 # Open Typeless
 
-> 🌳 **This project is a showcase for the [Trellis](https://github.com/mindfold-ai/Trellis) framework.**
+> **This project is a showcase for the [Trellis](https://github.com/mindfold-ai/Trellis) framework.**
 >
-> 🌳 **本项目是 [Trellis](https://github.com/mindfold-ai/Trellis) 框架的示例项目。**
+> **本项目是 [Trellis](https://github.com/mindfold-ai/Trellis) 框架的示例项目。**
 
 ---
 
