@@ -284,3 +284,80 @@ Start Batch 2 parallel development:
 ### Next Steps
 
 - None - task complete
+
+## Session 5: 实现 Push-to-Talk 完整功能
+
+**Date**: 2026-01-29
+**Task**: 实现 Push-to-Talk 完整功能
+
+### Summary
+
+(Add summary)
+
+### Main Changes
+
+## 完成内容
+
+实现了 Push-to-Talk 全局语音输入功能，用户按住 Right Option 键说话，松开后自动将识别结果插入到光标位置。
+
+### 主要功能
+
+| 模块 | 描述 |
+|------|------|
+| Volcengine ASR V3 协议 | 实现火山引擎大模型 ASR 二进制协议，支持 GZIP 压缩 |
+| KeyboardService | 使用 uiohook-napi 实现全局键盘监听 |
+| TextInputService | 使用 @xitanggg/node-insert-text 实现文字插入（无剪贴板污染）|
+| PushToTalkService | 协调键盘、ASR、悬浮窗、文字插入的完整流程 |
+| IPC 广播 | 修复状态只发送到 focused window 的问题，改为广播到所有窗口 |
+| 悬浮窗焦点 | 添加 focusable: false 和 showInactive() 防止抢占焦点 |
+
+### 关键修复
+
+1. **音频未发送**: 状态被发送到悬浮窗而非主窗口，导致 renderer 未收到 `listening` 状态
+2. **文字未插入**: 悬浮窗抢占焦点，导致 insertText 无法插入到用户之前的应用
+
+### 新增文件
+
+- `src/main/services/keyboard/` - 全局键盘监听服务
+- `src/main/services/permissions/` - macOS 权限检查服务
+- `src/main/services/text-input/` - 文字插入服务
+- `src/main/services/push-to-talk/` - Push-to-Talk 协调服务
+
+### 修改文件
+
+- `src/main/services/asr/lib/volcengine-client.ts` - 完整重写为二进制协议
+- `src/main/ipc/asr.handler.ts` - 改为广播到所有窗口
+- `src/main/windows/floating.ts` - 防止焦点抢占
+- `src/renderer.ts` - 添加自动录音逻辑
+
+### 下一步
+
+- [ ] 测试文字插入在各种应用中的兼容性
+- [ ] 添加悬浮窗 UI 样式
+- [ ] 完善错误处理和用户提示
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `dac5439` | (see git log) |
+| `a5d6820` | (see git log) |
+| `a0deb8b` | (see git log) |
+| `e4eec35` | (see git log) |
+| `51c47a8` | (see git log) |
+| `d44d520` | (see git log) |
+| `9c0f7b5` | (see git log) |
+| `7543dac` | (see git log) |
+| `20207e2` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete

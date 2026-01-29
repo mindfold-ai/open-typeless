@@ -8,7 +8,7 @@
 
 <!-- @@@auto:current-status -->
 - **Active File**: `journal-1.md`
-- **Total Sessions**: 4
+- **Total Sessions**: 5
 - **Last Active**: 2026-01-29
 <!-- @@@/auto:current-status -->
 
@@ -19,7 +19,7 @@
 <!-- @@@auto:active-documents -->
 | File | Lines | Status |
 |------|-------|--------|
-| `journal-1.md` | ~286 | Active |
+| `journal-1.md` | ~363 | Active |
 <!-- @@@/auto:active-documents -->
 
 ---
@@ -29,6 +29,7 @@
 <!-- @@@auto:session-history -->
 | # | Date | Title | Commits |
 |---|------|-------|---------|
+| 5 | 2026-01-29 | 实现 Push-to-Talk 完整功能 | `dac5439`, `a5d6820`, `a0deb8b`, `e4eec35`, `51c47a8`, `d44d520`, `9c0f7b5`, `7543dac`, `20207e2` |
 | 4 | 2026-01-29 | Task Cleanup | `b4a46b9` |
 | 3 | 2026-01-29 | ASR Integration Merge & Push-to-Talk Task Setup | `a19ecb4`, `f7e633f`, `59926e5`, `de97d4d`, `225db9a` |
 | 2 | 2026-01-29 | ASR Infrastructure Implementation (Batch 1) | `974e107`, `90c2688`, `af015d9`, `38e348b`, `e71f40c` |
