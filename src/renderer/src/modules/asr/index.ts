@@ -44,8 +44,8 @@ export {
 export { AUDIO_CONFIG, AUDIO_ERRORS } from './constants';
 
 // React hooks
-export { useAudioRecorder } from './hooks';
-export type { UseAudioRecorderReturn } from './hooks';
+export { useAudioRecorder, useASRStatus } from './hooks';
+export type { UseAudioRecorderReturn, UseASRStatusReturn } from './hooks';
 
 // Types
 export type {
@@ -54,3 +54,6 @@ export type {
   StateChangeCallback,
   AudioResources,
 } from './types';
+
+// Components
+export * from './components';

@@ -18,4 +18,10 @@ export const IPC_CHANNELS = {
     /** ASR error (Main -> Renderer) */
     ERROR: 'asr:error',
   },
+  FLOATING_WINDOW: {
+    /** Show floating window (Renderer -> Main) */
+    SHOW: 'floating-window:show',
+    /** Hide floating window (Renderer -> Main) */
+    HIDE: 'floating-window:hide',
+  },
 } as const;
