@@ -2,6 +2,7 @@ import { app, BrowserWindow } from 'electron';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
 import { setupAllIpcHandlers } from './main/ipc';
+import { floatingWindow } from './main/windows';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
@@ -32,6 +33,9 @@ const createWindow = () => {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+
+  // Create the floating window (hidden initially)
+  floatingWindow.create();
 };
 
 // This method will be called when Electron has finished

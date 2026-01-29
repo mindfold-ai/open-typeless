@@ -49,10 +49,26 @@ interface ASRApi {
 }
 
 /**
+ * Floating Window API interface exposed via contextBridge.
+ */
+interface FloatingWindowApi {
+  /**
+   * Show the floating window.
+   */
+  show: () => Promise<{ success: boolean }>;
+
+  /**
+   * Hide the floating window.
+   */
+  hide: () => Promise<{ success: boolean }>;
+}
+
+/**
  * Application API exposed to the renderer process.
  */
 interface AppApi {
   asr: ASRApi;
+  floatingWindow: FloatingWindowApi;
 }
 
 declare global {

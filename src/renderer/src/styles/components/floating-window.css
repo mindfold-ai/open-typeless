@@ -1,0 +1,221 @@
+/**
+ * Floating Window Styles
+ * Styles for the ASR floating window and its components.
+ */
+
+/* ============================================
+ * Reset and Base Styles
+ * ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  /* Transparent background for the floating window */
+  background: transparent;
+  overflow: hidden;
+}
+
+/* ============================================
+ * Floating Window Container
+ * ============================================ */
+
+.floating-window {
+  /* Visual appearance */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 12px 16px;
+
+  /* Layout */
+  min-height: 40px;
+  max-width: 300px;
+
+  /* Make the whole window draggable */
+  -webkit-app-region: drag;
+
+  /* Typography */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+
+  /* Prevent text selection during drag */
+  user-select: none;
+}
+
+.floating-window__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ============================================
+ * Status Indicator
+ * ============================================ */
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-indicator__label {
+  color: #666;
+  font-size: 13px;
+}
+
+/* Connecting state - spinning animation */
+.status-indicator--connecting .status-indicator__dot {
+  background: #999;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* We use a border-based spinner for connecting */
+.status-indicator--connecting .status-indicator__dot {
+  background: transparent;
+  border: 2px solid #999;
+  border-top-color: transparent;
+}
+
+/* Listening state - pulsing animation */
+.status-indicator--listening .status-indicator__dot {
+  background: #ff4444;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+/* Processing state - subtle animation */
+.status-indicator--processing .status-indicator__dot {
+  background: #ff9900;
+  animation: blink 0.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Done state - static green */
+.status-indicator--done .status-indicator__dot {
+  background: #44cc44;
+}
+
+/* Error state - red */
+.status-indicator--error .status-indicator__dot {
+  background: #ff4444;
+}
+
+/* ============================================
+ * Transcript Display
+ * ============================================ */
+
+.transcript-text {
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Interim (not final) text - gray */
+.transcript-text--interim {
+  color: #666;
+}
+
+/* Final text - black */
+.transcript-text--final {
+  color: #000;
+}
+
+/* ============================================
+ * Error Display
+ * ============================================ */
+
+.error-display {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #cc0000;
+}
+
+.error-display__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #cc0000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.error-display__message {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ============================================
+ * Dark Mode Support (optional)
+ * ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .floating-window {
+    background: rgba(40, 40, 40, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .status-indicator__label {
+    color: #aaa;
+  }
+
+  .transcript-text--interim {
+    color: #999;
+  }
+
+  .transcript-text--final {
+    color: #fff;
+  }
+
+  .error-display {
+    color: #ff6666;
+  }
+
+  .error-display__icon {
+    background: #ff4444;
+  }
+}

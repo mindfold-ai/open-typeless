@@ -81,7 +81,25 @@ const asrApi = {
   },
 };
 
+/**
+ * Floating Window API exposed to the renderer process.
+ */
+const floatingWindowApi = {
+  /**
+   * Show the floating window.
+   */
+  show: (): Promise<{ success: boolean }> =>
+    ipcRenderer.invoke(IPC_CHANNELS.FLOATING_WINDOW.SHOW),
+
+  /**
+   * Hide the floating window.
+   */
+  hide: (): Promise<{ success: boolean }> =>
+    ipcRenderer.invoke(IPC_CHANNELS.FLOATING_WINDOW.HIDE),
+};
+
 // Expose the API to the renderer process
 contextBridge.exposeInMainWorld('api', {
   asr: asrApi,
+  floatingWindow: floatingWindowApi,
 });
