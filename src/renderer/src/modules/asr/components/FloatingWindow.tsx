@@ -3,6 +3,7 @@
  * The main component for the ASR floating window that displays status and transcription.
  */
 
+import type { ReactNode } from 'react';
 import { useASRStatus } from '../hooks';
 import { StatusIndicator } from './StatusIndicator';
 import { TranscriptDisplay } from './TranscriptDisplay';
@@ -24,7 +25,7 @@ import { ErrorDisplay } from './ErrorDisplay';
  * );
  * ```
  */
-export function FloatingWindow(): JSX.Element {
+export function FloatingWindow(): ReactNode {
   const { status, result, error } = useASRStatus();
 
   // Determine what to show based on status
