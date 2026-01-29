@@ -1,0 +1,14 @@
+{"file": ".trellis/workflow.md", "reason": "Project workflow and conventions"}
+{"file": ".trellis/spec/shared/index.md", "reason": "Shared coding standards"}
+{"file": ".trellis/spec/backend/index.md", "reason": "Backend development guide"}
+{"file": ".trellis/spec/backend/api-module.md", "reason": "API module conventions"}
+{"file": ".trellis/spec/backend/quality.md", "reason": "Code quality requirements"}
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend development guide"}
+{"file": ".trellis/spec/frontend/components.md", "reason": "Component conventions"}
+{"file": ".trellis/spec/frontend/ipc-electron.md", "reason": "Floating Window Pattern with alwaysOnTop and globalShortcut"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "State patterns for ASR status display"}
+{"file": ".trellis/spec/frontend/react-pitfalls.md", "reason": "Avoid state lifecycle issues in floating window"}
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Windows manager structure for src/main/windows/"}
+{"file": ".trellis/spec/shared/typescript.md", "reason": "Type definitions for window manager"}
+{"file": ".trellis/spec/guides/pre-implementation-checklist.md", "reason": "Planning for window positioning and state"}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "IPC events between main window manager and renderer"}

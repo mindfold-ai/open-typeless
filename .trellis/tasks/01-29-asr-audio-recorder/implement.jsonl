@@ -1,0 +1,11 @@
+{"file": ".trellis/workflow.md", "reason": "Project workflow and conventions"}
+{"file": ".trellis/spec/shared/index.md", "reason": "Shared coding standards"}
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend development guide"}
+{"file": ".trellis/spec/frontend/components.md", "reason": "Component conventions"}
+{"file": ".trellis/spec/frontend/ipc-electron.md", "reason": "Using window.api.asr.sendAudio() for IPC communication"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "Hook patterns for recording state management"}
+{"file": ".trellis/spec/frontend/react-pitfalls.md", "reason": "Avoid common React bugs in useAudioRecorder hook"}
+{"file": ".trellis/spec/shared/typescript.md", "reason": "TypeScript patterns for audio data types"}
+{"file": ".trellis/spec/backend/macos-permissions.md", "reason": "Microphone permission handling for getUserMedia"}
+{"file": ".trellis/spec/guides/pre-implementation-checklist.md", "reason": "Planning questions before implementing hook"}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Ensure PCM converter can be reused"}

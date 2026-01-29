@@ -1,0 +1,41 @@
+{
+  "id": "asr-audio-recorder",
+  "name": "asr-audio-recorder",
+  "title": "ASR Audio Recorder - Web Audio API",
+  "description": "",
+  "status": "planning",
+  "dev_type": null,
+  "scope": "asr",
+  "priority": "P1",
+  "creator": "taosu",
+  "assignee": "taosu",
+  "createdAt": "2026-01-29",
+  "completedAt": null,
+  "branch": "feature/asr-audio-recorder",
+  "base_branch": null,
+  "worktree_path": null,
+  "current_phase": 0,
+  "next_action": [
+    {
+      "phase": 1,
+      "action": "implement"
+    },
+    {
+      "phase": 2,
+      "action": "check"
+    },
+    {
+      "phase": 3,
+      "action": "finish"
+    },
+    {
+      "phase": 4,
+      "action": "create-pr"
+    }
+  ],
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "relatedFiles": [],
+  "notes": ""
+}

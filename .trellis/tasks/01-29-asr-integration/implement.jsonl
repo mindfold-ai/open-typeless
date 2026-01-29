@@ -1,0 +1,19 @@
+{"file": ".trellis/workflow.md", "reason": "Project workflow and conventions"}
+{"file": ".trellis/spec/shared/index.md", "reason": "Shared coding standards"}
+{"file": ".trellis/spec/backend/index.md", "reason": "Backend development guide"}
+{"file": ".trellis/spec/backend/api-module.md", "reason": "API module conventions"}
+{"file": ".trellis/spec/backend/quality.md", "reason": "Code quality requirements"}
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend development guide"}
+{"file": ".trellis/spec/frontend/components.md", "reason": "Component conventions"}
+{"file": ".trellis/spec/backend/type-safety.md", "reason": "Type safety for ASRService state machine"}
+{"file": ".trellis/spec/backend/ipc-handler-registration.md", "reason": "Implementing full IPC handlers connecting to ASRService"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Error handling for E2E flow failures"}
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Service and procedures organization"}
+{"file": ".trellis/spec/backend/logging.md", "reason": "Logging throughout the E2E flow for debugging"}
+{"file": ".trellis/spec/frontend/ipc-electron.md", "reason": "IPC event subscriptions for status and results"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "State coordination between components"}
+{"file": ".trellis/spec/frontend/react-pitfalls.md", "reason": "Handling async state updates and cleanup"}
+{"file": ".trellis/spec/shared/typescript.md", "reason": "TypeScript for service interfaces"}
+{"file": ".trellis/spec/guides/pre-implementation-checklist.md", "reason": "Planning for state machine transitions"}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Critical - full data flow from Renderer to WebSocket and back"}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Ensure service patterns are consistent"}
