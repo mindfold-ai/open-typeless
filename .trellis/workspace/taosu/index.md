@@ -8,7 +8,7 @@
 
 <!-- @@@auto:current-status -->
 - **Active File**: `journal-1.md`
-- **Total Sessions**: 5
+- **Total Sessions**: 6
 - **Last Active**: 2026-01-29
 <!-- @@@/auto:current-status -->
 
@@ -19,7 +19,7 @@
 <!-- @@@auto:active-documents -->
 | File | Lines | Status |
 |------|-------|--------|
-| `journal-1.md` | ~363 | Active |
+| `journal-1.md` | ~438 | Active |
 <!-- @@@/auto:active-documents -->
 
 ---
@@ -29,6 +29,7 @@
 <!-- @@@auto:session-history -->
 | # | Date | Title | Commits |
 |---|------|-------|---------|
+| 6 | 2026-01-29 | Floating Window 样式、布局与 Bug 修复 | `d19c607`, `403bfc3`, `f47b652`, `58ff77a`, `6465627` |
 | 5 | 2026-01-29 | 实现 Push-to-Talk 完整功能 | `dac5439`, `a5d6820`, `a0deb8b`, `e4eec35`, `51c47a8`, `d44d520`, `9c0f7b5`, `7543dac`, `20207e2` |
 | 4 | 2026-01-29 | Task Cleanup | `b4a46b9` |
 | 3 | 2026-01-29 | ASR Integration Merge & Push-to-Talk Task Setup | `a19ecb4`, `f7e633f`, `59926e5`, `de97d4d`, `225db9a` |

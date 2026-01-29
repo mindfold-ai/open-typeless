@@ -361,3 +361,78 @@ Start Batch 2 parallel development:
 ### Next Steps
 
 - None - task complete
+
+## Session 6: Floating Window 样式、布局与 Bug 修复
+
+**Date**: 2026-01-29
+**Task**: Floating Window 样式、布局与 Bug 修复
+
+### Summary
+
+(Add summary)
+
+### Main Changes
+
+## 完成内容
+
+### 1. Floating Window 视觉样式
+- macOS 原生毛玻璃效果 (vibrancy: popover)
+- 深色半透明背景 rgba(28, 28, 30, 0.92) + blur(20px)
+- 微光边框 1px rgba(255, 255, 255, 0.08)
+- 录音指示器呼吸动画 + 发光阴影
+- 文字颜色：final 白色，interim 灰色斜体
+
+### 2. 高度自适应机制
+- 新增 IPC channel `setContentHeight` 用于 Renderer → Main 通信
+- Main 进程根据内容高度动态调整窗口 (58px ~ 112px)
+- 窗口向上扩展，底边固定
+- 防抖机制 (< 4px 变化忽略)
+- 自动滚动到底部显示最新文字
+
+### 3. Bug 修复
+- 修复 show() 幂等性问题：只在窗口从隐藏→显示时重置高度
+- 修复结束时视觉回弹：hide before notify 模式
+- 修复右侧文字裁剪：增加右侧内边距
+
+### 4. Spec 文档更新
+- `ipc-electron.md`: 添加状态机驱动窗口管理、IPC 事件顺序
+- `window-lifecycle.md`: 新建窗口生命周期管理指南
+- `check-frontend.md`: 添加窗口生命周期检查项
+
+## 关键学习
+
+| 问题 | 根因 | 解决方案 |
+|------|------|----------|
+| show() 重复调用导致回弹 | 未区分首次显示和状态更新 | 用 isVisible() 守卫 |
+| 结束时内容消失再隐藏 | 先通知再隐藏 | hide before notify |
+| 白色空白区域 | resetHeight 只重置变量 | 显示前 setBounds() |
+
+## 修改文件
+- `src/main/windows/floating.ts`
+- `src/main/ipc/floating-window.handler.ts`
+- `src/renderer/src/modules/asr/components/*.tsx`
+- `src/renderer/src/styles/components/floating-window.css`
+- `.trellis/spec/frontend/ipc-electron.md`
+- `.trellis/spec/frontend/window-lifecycle.md` (新建)
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `d19c607` | (see git log) |
+| `403bfc3` | (see git log) |
+| `f47b652` | (see git log) |
+| `58ff77a` | (see git log) |
+| `6465627` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
