@@ -3,6 +3,7 @@
  * Displays the current ASR status with appropriate visual feedback.
  */
 
+import type { ReactNode } from 'react';
 import type { ASRStatus } from '../../../../../shared/types/asr';
 
 interface StatusIndicatorProps {
@@ -30,7 +31,7 @@ const STATUS_CONFIG: Record<ASRStatus, { label: string; className: string }> = {
  * <StatusIndicator status="listening" />
  * ```
  */
-export function StatusIndicator({ status }: StatusIndicatorProps): JSX.Element | null {
+export function StatusIndicator({ status }: StatusIndicatorProps): ReactNode {
   const config = STATUS_CONFIG[status];
 
   // Don't render anything for idle status

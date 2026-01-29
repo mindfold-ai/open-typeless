@@ -3,6 +3,8 @@
  * Displays transcribed text with different styles for interim and final results.
  */
 
+import type { ReactNode } from 'react';
+
 interface TranscriptDisplayProps {
   /** Transcribed text to display */
   text?: string;
@@ -22,7 +24,7 @@ interface TranscriptDisplayProps {
  * <TranscriptDisplay text="Hello world" interim={false} />
  * ```
  */
-export function TranscriptDisplay({ text, interim = false }: TranscriptDisplayProps): JSX.Element | null {
+export function TranscriptDisplay({ text, interim = false }: TranscriptDisplayProps): ReactNode {
   // Don't render if no text
   if (!text) {
     return null;
