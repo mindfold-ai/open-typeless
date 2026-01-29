@@ -45,6 +45,9 @@ export class FloatingWindowManager {
       movable: true,
       show: false,
       hasShadow: false,
+      // CRITICAL: Prevent window from stealing focus
+      // This allows text insertion to work in the previously focused app
+      focusable: false,
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         contextIsolation: true,
@@ -54,10 +57,13 @@ export class FloatingWindowManager {
 
     // Load the floating window HTML
     if (FLOATING_WINDOW_VITE_DEV_SERVER_URL) {
-      this.window.loadURL(`${FLOATING_WINDOW_VITE_DEV_SERVER_URL}`);
+      // In dev mode, we need to explicitly load floating.html
+      // since Vite serves the root as index.html by default
+      const devUrl = FLOATING_WINDOW_VITE_DEV_SERVER_URL.replace(/\/$/, '');
+      this.window.loadURL(`${devUrl}/floating.html`);
     } else {
       this.window.loadFile(
-        path.join(__dirname, `../renderer/${FLOATING_WINDOW_VITE_NAME}/index.html`),
+        path.join(__dirname, `../renderer/${FLOATING_WINDOW_VITE_NAME}/floating.html`),
       );
     }
 
@@ -74,14 +80,17 @@ export class FloatingWindowManager {
   }
 
   /**
-   * Show the floating window.
+   * Show the floating window without stealing focus.
+   * Uses showInactive() to keep focus on the user's previous app.
    */
   show(): void {
     if (!this.window) {
       this.create();
     }
     this.clearAutoHideTimer();
-    this.window?.show();
+    // Use showInactive() to show window without stealing focus
+    // This is critical for text insertion to work in the previously focused app
+    this.window?.showInactive();
   }
 
   /**
