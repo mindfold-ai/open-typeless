@@ -30,6 +30,7 @@
     "@electron-forge/plugin-vite": "^7.11.1",
     "@electron/fuses": "^1.8.0",
     "@types/electron-squirrel-startup": "^1.0.2",
+    "@types/ws": "^8.18.1",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "electron": "40.1.0",
@@ -39,6 +40,9 @@
     "vite": "^5.4.21"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "electron-log": "^5.4.3",
+    "electron-squirrel-startup": "^1.0.1",
+    "ws": "^8.19.0",
+    "zod": "^4.3.6"
   }
 }

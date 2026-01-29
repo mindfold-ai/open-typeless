@@ -12,9 +12,9 @@
   "createdAt": "2026-01-29",
   "completedAt": null,
   "branch": "feature/asr-volcengine-client",
-  "base_branch": null,
-  "worktree_path": null,
-  "current_phase": 0,
+  "base_branch": "main",
+  "worktree_path": "/Users/taosu/workspace/company/mindfold/product/share-public/ot-worktrees/feature/asr-volcengine-client",
+  "current_phase": 3,
   "next_action": [
     {
       "phase": 1,
